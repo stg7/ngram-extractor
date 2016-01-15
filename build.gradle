@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+mainClassName="Extractor"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.apache.tika:tika-core:1.11'
+    compile 'org.apache.tika:tika-parsers:1.11'
+    compile 'net.sourceforge.argparse4j:argparse4j:0.7.0'
+    compile 'com.google.code.externalsortinginjava:externalsortinginjava:0.1.9'
+
+}
+
+run {
+   if (project.hasProperty('args')) {
+       args project.args.split(',')
+   }
+}
+
+
+
+
