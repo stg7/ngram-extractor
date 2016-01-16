@@ -101,7 +101,5 @@ class NgramExtractor {
         // tidy up generated files
         Files.delete(Paths.get(temporary_file));
         Files.delete(Paths.get(sorted_file));
-
-        Log.info("done");
     }
 }
