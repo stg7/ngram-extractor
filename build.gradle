@@ -1,9 +1,17 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.2'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = 1.8
 
-mainClassName="Extractor"
+mainClassName="NgramExtractor"
 
 repositories {
     mavenCentral()
@@ -14,8 +22,9 @@ dependencies {
     compile 'org.apache.tika:tika-parsers:1.11'
     compile 'net.sourceforge.argparse4j:argparse4j:0.7.0'
     compile 'com.google.code.externalsortinginjava:externalsortinginjava:0.1.9'
-
+    compile 'org.slf4j:slf4j-simple:1.6.1'
 }
+
 
 run {
    if (project.hasProperty('args')) {

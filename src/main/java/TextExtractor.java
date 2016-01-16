@@ -10,6 +10,10 @@ import org.apache.tika.parser.ParseContext;
 import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.ContentHandler;
 
+/*
+    based on tika example,
+    extract plaintext from a file
+ */
 class TextExtractor {
     TikaConfig tika;
 
@@ -35,8 +39,10 @@ class TextExtractor {
         return handler.toString();
     }
 
+    /*
+        return plaintext of `filename`
+     */
     public String getText(String filename) {
-
         Metadata metadata = new Metadata();
         String text = null;
         try {

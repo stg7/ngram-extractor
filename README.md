@@ -1,11 +1,17 @@
-Ngram Extractor (dataset generation for phrasit)
+Ngram Extractor (dataset generation for PhrasIt)
 ================================================
 
 You need:
 
-* java8
+* java 8
 
-run it via:
+First test, simply run:
+```
+./extract.sh -h
+```
+You will get the help screen after the project was successfully compiled.
+
+Now you can extract n-grams with:
 ```
 ./extract.sh FILES
 ```
@@ -15,4 +21,30 @@ e.g.
 ./extract.sh in_data/*.pdf
 ```
 
-The tool will print out all ngrams with its frequency in your collection to stdout.
+The tool will print out all n-grams with its frequency in your collection to stdout.
+Each line has the following format:
+```
+Ngram \t freq
+```
+
+Supported Formats
+-----------------
+As input formats are all text formats possible that tika supports, see [formats](https://tika.apache.org/1.11/formats.html).
+
+* txt
+* html
+* pdf
+* ...
+
+Development Notes
+-----------------
+You can manually compile the project via gradle:
+```
+./gradlew build
+./gradlew run -Pargs=FIlE1,FILE2
+```
+
+It is possible to build a jar with all dependencies via:
+```
+./gradlew shadowJar
+```
