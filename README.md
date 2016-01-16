@@ -7,18 +7,18 @@ You need:
 
 First test, simply run:
 ```
-./extract.sh -h
+./ngram-extract.sh -h
 ```
 You will get the help screen after the project was successfully compiled.
 
 Now you can extract n-grams with:
 ```
-./extract.sh FILES
+./ngram-extract.sh FILES
 ```
 
 e.g.
 ```
-./extract.sh in_data/*.pdf
+./ngram-extract.sh in_data/*.pdf
 ```
 
 The tool will print out all n-grams with its frequency in your collection to stdout.
